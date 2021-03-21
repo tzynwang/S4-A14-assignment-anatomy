@@ -25,12 +25,12 @@ os: Windows_NT 10.0.18363 win32 x64
 - 為配合CSS選取器的邏輯，控制「亮色／暗色模式」的`<input>`、`<label>`組放在`<div class="container">`上方（`<input>`、`<label>`組的階層與`<div class="container">`一致）
 
 最終`<body>`內容如下：
-<script src="https://gist.github.com/tzynwang/bac46a0e8166ded1cc18d837c816c718.js"></script>
+[S4 A14 為客戶打造履歷網頁.html](https://gist.github.com/tzynwang/bac46a0e8166ded1cc18d837c816c718)
 
 ## CSS內容解析
 
 ### 通用樣式
-<script src="https://gist.github.com/tzynwang/d21d76dc229a53dad1c956d255b8fb38.js"></script>
+[S4 A14 為客戶打造履歷網頁：通用樣式.css](https://gist.github.com/tzynwang/d21d76dc229a53dad1c956d255b8fb38)
 
 - 字體
   - 因作業會上傳到codepen，故不採取self-host，而是直接`@import`由Google提供的字體服務
@@ -46,7 +46,7 @@ os: Windows_NT 10.0.18363 win32 x64
 - `h2`：因有多個`h2`出現在網頁上，且樣式不會配合畫面改變尺寸或`margin`、`padding`等，故放在通用樣式區域宣告
 
 ### `header`
-<script src="https://gist.github.com/tzynwang/702cfae7a67818c5ba0153f2358229f6.js"></script>
+[S4 A14 為客戶打造履歷網頁：header.css](https://gist.github.com/tzynwang/702cfae7a67818c5ba0153f2358229f6)
 
 - `header`與`.avatar`：為了在各種版面下都能簡單的處理水平置中，直接使用`display: flex;`搭配`flex-direction: column;`與`align-items: center;`來做讓`header`與`.avatar`下所有的內容都呈現水平置中
 - `img`：與wireframe的設計不同，最後決定拿掉履歷照片的`border-radius: 50%;`，因為最終成品一眼望過去只有照片是圓形反而覺得有點突兀
@@ -58,7 +58,7 @@ os: Windows_NT 10.0.18363 win32 x64
 - `a:link`、`a:visited`、`a:hover`、`a:active`：剛好可以使用色票中的主、輔與亮點顏色；樣式撰寫的順序為LVHA的理由參考之前記錄過的<a href="https://tzynwang.github.io/2021/css-specificity/" target="_blank">CSS Specificity 相關筆記</a>
 
 ### `main`
-<script src="https://gist.github.com/tzynwang/ed13c13882860c3133090b37a5734b18.js"></script>
+[S4 A14 為客戶打造履歷網頁：main.css](https://gist.github.com/tzynwang/ed13c13882860c3133090b37a5734b18)
 
 - `main section`：首先對`<main>`包含的三個`<section>`加上`margin-bottom: 16px;`，製造區塊之間的距離
 - `.about p, .skills p, .experiences ul li`：一口氣撐開三個區塊的文字與清單排版的行高，偷懶一點可寫成`main p, main ul li`，不過，因為想維持樣式表內容撰寫的一致性，最後還是選擇統一使用「.class HTML元素」的寫法
@@ -69,12 +69,12 @@ os: Windows_NT 10.0.18363 win32 x64
 - `.experiences ul li`：使用`"\21A0  "`設定清單項目的樣式，並透過`inside`讓清單項目不外擴
 
 ### `footer`
-<script src="https://gist.github.com/tzynwang/1d2b5895b99b8e4bce98f673669cfe8e.js"></script>
+[S4 A14 為客戶打造履歷網頁：footer.css](https://gist.github.com/tzynwang/1d2b5895b99b8e4bce98f673669cfe8e)
 
 - `<footer>`是block物件，直接使用`height`撐開高度後，配合`display: flex;`、`justify-content: center;`與`align-items: center;`讓裡面的文字XY軸置中；並使用`background-color: var(--primary);`填色
 
 ### 手機橫持的排版
-<script src="https://gist.github.com/tzynwang/1ccc83d8adc6299c68c39a10365b9662.js"></script>
+[S4 A14 為客戶打造履歷網頁：手機橫持.css](https://gist.github.com/tzynwang/1ccc83d8adc6299c68c39a10365b9662)
 
 `min-width: 568px`是iPhone SE橫持的寬度，以此為基準，開始處理第二種版面
 - `.container`：使用`display: flex;`讓`<header>`與`<main>`水平排列，並總高度設定為「螢幕視高（100vh）扣掉`<footer>`的36px」，把`<footer>`固定在畫面最底
@@ -82,18 +82,18 @@ os: Windows_NT 10.0.18363 win32 x64
 - `h1`：稍微縮小字體，避免姓名過大造成版面在視覺上的不平衡
 
 ### 平板的排版
-<script src="https://gist.github.com/tzynwang/c9dc2bf49e03e48e10a501966c42e145.js"></script>
+[S4 A14 為客戶打造履歷網頁：平板.css](https://gist.github.com/tzynwang/c9dc2bf49e03e48e10a501966c42e145)
 
 `min-width: 768px`是iPad直立的寬度，以此為基準，開始處理第三種版面
 將`header`與`main`的寬度比例改為3比7；並因為顯示區域變大，所以稍微增加內容內推的距離，`padding`提高為32px、`h1`稍稍放大（4rem）
 
 ### 桌上裝置顯示印表機圖示
-<script src="https://gist.github.com/tzynwang/47d368d116e011d2d075c7042807fb9e.js"></script>
+[S4 A14 為客戶打造履歷網頁：桌機.css](https://gist.github.com/tzynwang/47d368d116e011d2d075c7042807fb9e)
 
 設定`min-width: 768px`以上後要顯示連結群組最尾端的印表機圖示，小缺點是這個break point會讓橫持的iPad Pro也看得到印表機……（ ˘･з･）
 
 ### 亮色／暗色模式
-<script src="https://gist.github.com/tzynwang/8facdb6989a9e4e4441ff5b6fddf9a71.js"></script>
+[S4 A14 為客戶打造履歷網頁：dark mode.css](https://gist.github.com/tzynwang/8facdb6989a9e4e4441ff5b6fddf9a71)
 
 簡短說明如何使用純CSS做出「亮色／暗色模式」切換的效果：
 1. 使用`<input type="checkbox">`搭配`<label>`並使用`position: fixed;`固定位置，`<input>`放在可視畫面之外，`<label>`留在畫面右下角（小版面）或右上方（中型以上版面）讓使用者點擊
