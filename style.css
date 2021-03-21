@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Kristi&family=Newsreader:wght@400&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Newsreader";
+  /* color tickets */
+  --primary: #AB382B;
+  --primary-light: #C94534;
+  --secondary: #020740;
+  --secondary-light: #0A0169;
+  --highlight: #E4A917;
+  --dark: #333;
+  --medium: #ccc;
+  --light: #eee;
+}
+
+.container {
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+header, main {
+  padding: 24px;
+}
+
+main {
+  max-width: 1080px;
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+/* header section */
+
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img {
+  max-width: 200px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 5rem;
+  font-family: "Kristi";
+  color: var(--primary-light);
+  transform: rotate(-5deg);
+  margin-bottom: 8px;
+}
+
+header ul {
+  list-style: none;
+  display: flex;
+}
+
+header ul li {
+  display: inline-block;
+  font-size: 24px;
+  margin: 16px;
+}
+
+header ul li:last-child {
+  display: none;
+}
+
+a {
+  transition: 0.3s;
+}
+
+a:link {
+  color: var(--primary);
+}
+
+a:visited {
+  color: var(--secondary);
+}
+
+a:hover {
+  color: var(--highlight);
+}
+
+a:active {
+  color: var(--highlight);
+}
+
+/* main section */
+
+main section {
+  margin-bottom: 16px;
+}
+
+.about p, .skills p, .experiences ul li {
+  line-height: 1.25rem;
+}
+
+.skills span {
+  color: var(--primary-light);
+}
+
+.experiences div {
+  margin-bottom: 8px;
+}
+
+.experiences p {
+  font-size: 1.25rem;
+  color: var(--primary-light);
+}
+
+.experiences span {
+  display: inline-block;
+  margin: 4px 0px;
+  padding: 2px 8px;
+  background-color: var(--secondary);
+  color: var(--light);
+}
+
+.experiences ul li {
+  list-style: "\21A0  " inside;
+}
+
+/* footer section */
+
+footer {
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary);
+  color: var(--light);
+}
+
+/* 手機橫持 */
+
+@media screen and (min-width: 568px) {
+  .container {
+    display: flex;
+    height: calc(100vh - 36px);
+  }
+  header {
+    width: 40%;
+    overflow: auto;
+    background-color: var(--medium);
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  main {
+    width: 60%;
+    overflow: auto;
+  }
+}
+
+/* 平板 */
+
+@media screen and (min-width: 768px) {
+  header, main {
+    padding: 32px;
+  }
+  header {
+    width: 30%;
+  }
+  h1 {
+    font-size: 4rem;
+  }
+  main {
+    width: 70%;
+  }
+}
+
+/* 桌機 */
+
+@media screen and (min-width: 1280px) {
+  header ul li:last-child {
+    display: inline-block;
+  }
+}
+
+/* dark mode */
+
+#dark, #darkLabel {
+  position: fixed;
+}
+
+#dark {
+  top: -2rem;
+  left: -2rem;
+}
+
+#darkLabel {
+  opacity: 0.8;
+  width: 60px;
+  height: 48px;
+  right: 0px;
+  bottom: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark);
+  z-index: 1;
+  transition: 0.3s;
+  box-shadow: 0px 0px 8px var(--dark);
+}
+
+#darkLabel svg {
+  fill: var(--light);
+}
+
+#dark:checked~#darkLabel {
+  background-color: var(--medium);
+  box-shadow: 0px 0px 8px var(--light);
+}
+
+#dark:checked~#darkLabel svg {
+  fill: var(--dark);
+}
+
+#dark:checked~#darkLabel svg path {
+  d: path("M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z");
+}
+
+#dark:checked~.container, #dark:checked~footer {
+  filter: hue-rotate(180deg) invert(100%);
+}
+
+#dark:checked~.container header .avatar img, #dark:checked~footer p span {
+  filter: hue-rotate(-180deg) invert(100%);
+}
+
+@media screen and (min-width: 568px) {
+  #darkLabel {
+    width: 48px;
+    height: 60px;
+    top: 0;
+    right: 60px;
+  }
+}
