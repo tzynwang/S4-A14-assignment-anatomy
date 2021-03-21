@@ -1,4 +1,8 @@
-# ALPHA Camp 2021 學期一、三月班 履歷網頁作業：內容解析
+# ALPHA Camp 2021 三月班 履歷網頁作業：內容解析
+
+## 成品
+- [純網頁版](https://tzynwang.github.io/S4-A14-assignment-anatomy/)
+- [codepen版](https://codepen.io/Charlie7779/pen/zYogoWZ)
 
 ## 總結
 記錄在2021年ALPHA Camp學期一、三月班第三週履歷網頁作業使用到的技術、思路與開發流程。
